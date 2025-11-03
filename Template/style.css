@@ -1,88 +1,229 @@
-.game { 
-    width: 100%;
-    height: 70%;
-    background-color: rgb(0, 0, 0);
-    position: relative;
-    display: flex;
-    flex-direction: row; 
+.space {
+    width: 100%; 
+    height: 100%;
+    background-color: rgb(43, 42, 42);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; 
     align-items: center;
     justify-content: center;
-    gap: 80px;
-
+    display: flex; /* displays text in the middle of the window*/
 }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.blockText {
-    color: azure;
+.player { 
+    width: 30px;
     height: 30px;
-    margin: 0;
-
+    background-color: rgb(212, 207, 195);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 80px; 
+    left: 100px;
+    border-radius: 50%; /*making it round*/
+    /*z-index: 5;*/
 }
 
-.block {
+.star { 
+    width: 60px;
+    height: 60px;
+    background-color: rgb(251, 196, 69);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 300px; 
+    left: 250px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star1 { 
     width: 100px;
     height: 100px;
-}
-.tree {
-    background-color: brown;
-
-}
-
-.iron {
-    background-color: aqua;
-}
-
-.gold {
-    background-color: rgb(232, 255, 127);
-}
-
-.wrapper {
-    width: 100%;
-    height: 30%;
-    background-color: brown;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: rgb(251, 196, 69);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 200px; 
+    left: 600px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
 }
 
-.craftingTable {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
+.star2 { 
+    width: 140px;
+    height: 140px;
+    background-color: rgb(249, 181, 21);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 450px; 
+    left: 100px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
 }
 
-.upgradeText {
-    color: azure;
-    height: 30px;
-    margin: 0;
+.star3 { 
+    width: 120px;
+    height: 120px;
+    background-color: rgb(255, 215, 121);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 150px; 
+    left: 100px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
 }
 
-.upgrade {
+.star4 { 
+    width: 90px;
+    height: 90px;
+    background-color: rgb(245, 178, 22);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 80px; 
+    left: 350px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star5 { 
+    width: 90px;
+    height: 90px;
+    background-color: rgb(251, 196, 69);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 460px; 
+    left: 330px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star6 { 
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 216, 124);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 300px; 
+    left: 430px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star7 { 
+    width: 100px;
+    height: 100px;
+    background-color: rgb(251, 196, 69);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 300px; 
+    left: 30px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star8 { 
     width: 80px;
     height: 80px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 20px; 
+    left: 500px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
 }
 
-.tool {
-    background-color: blue;
+.blackhole { 
+    width: 130px;
+    height: 130px;
+    background-color: rgb(0, 0, 0);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    bottom: 40px; /*how far from the bottom the door is*/
+    right: 90px; /*how far right the door is gonna go*/
+    border-radius: 50%; /*making it round*/
 }
 
-.worker {
-    background-color: blueviolet;
+.message {
+    color: rgb(255, 255, 255);
+    position: relative;
 }
 
-h3 {
-    color: aliceblue;
-}
 /* Prevent padding and border from affecting element width. */
 *,
 ::before,
@@ -105,6 +246,7 @@ body {
 html {
     height: 100%;
     width: 100%;
+    user-select: none; /*wont select*/
 }
 
 #sample-output {
