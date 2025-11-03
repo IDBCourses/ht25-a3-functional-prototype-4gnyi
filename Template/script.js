@@ -4,37 +4,39 @@
 */
 
 // State variables are the parts of your program that change over time.
-let playerX = 100; // starting position
-let playerY = 80;
-let speed = 4;
-let hasEscaped = false;
-
-let player, blackhole, message, stars = [];
+// CHANGING VARIABLES
+let playerX = 100; // starting position on x-axis
+let playerY = 80; // starting position on y-axis
+let hasEscaped = false; // checks if player has reached the black hole
+const keysPressed = {}; // Track which key is pressed. values inside of objects {} can still change. why const?
+let player, blackhole, message, stars = []; // will hold references to html-elements
+let playerSize = 40; // player's current size
 
 // Settings variables should contain all of the "fixed" parts of your programs
-// Track which key is pressed
-const keysPressed = {};
-
-// Keyboard layout rows
-const topRow = ["q","w","e","r","t","y","u","i","o","p"];
-const middleLeft = ["a","s","d","f","g"];
-const middleRight = ["h","j","k","l"];
-const bottomRow = ["z","x","c","v","b","n","m"];
+// NOT CHANGING VARIABLES
+const speed = 4; // how many pixels per frame the player is moved 
+const topRow = ["q","w","e","r","t","y","u","i","o","p"]; // Keyboard layout rows
+const middleLeft = ["a","s","d","f","g"]; // Keyboard layout rows
+const middleRight = ["h","j","k","l"]; // Keyboard layout rows
+const bottomRow = ["z","x","c","v","b","n","m"]; // Keyboard layout rows
 
 // Code that runs over and over again
 // MAIN LOOP
+// a.
 function loop() {
-  if (!player || !blackhole || !message) {
-    // keep loop running even if elements are not ready yet
-    window.requestAnimationFrame(loop);
+  if (!player || !blackhole || !message) { // checks if elements exists
+    window.requestAnimationFrame(loop); // keep loop running even if elements are not ready yet. still a bit unclear?
     return;
-  }
+  } 
 
-  // Determine potential next position
-  let nextX = playerX;
-  let nextY = playerY;
+  // Determine potential next position and sets a local/temporary variable to hold it
+  // Not changing players position before we know if it collides with something
+  // b.
+  let nextX = playerX; // creates a new variables called nextX and gives it the current value of playerX
+  let nextY = playerY; // creates a new variables called nextY and gives it the current value of playerY
 
-  // Determine direction based on pressed keys
+  // Determines direction based on pressed keys
+  // c.
   for (const key in keysPressed) {
     if (!keysPressed[key]) continue; // skip released keys
     const k = key.toLowerCase();
@@ -45,10 +47,10 @@ function loop() {
     else if (middleRight.includes(k)) nextX += speed; // right
   }
 
-  // Stay inside the .space area
-  const spaceRect = document.querySelector(".space").getBoundingClientRect();
-  const playerRect = player.getBoundingClientRect();
-
+  // Make sure we stay inside the .space area
+  // d.
+  const spaceRect = document.querySelector(".space").getBoundingClientRect(); // gives size and position of .space from html and css
+  const playerRect = player.getBoundingClientRect(); // Checks collision with walls of .space and adjust position to not go past the walls
   if (nextX < 0) nextX = 0;
   if (nextY < 0) nextY = 0;
   if (nextX + playerRect.width > spaceRect.width)
@@ -56,10 +58,12 @@ function loop() {
   if (nextY + playerRect.height > spaceRect.height)
     nextY = spaceRect.height - playerRect.height;
 
-  // Checks for star-collision
+  // Check and update shrink status
+  checkShrink();
+
+  // Calling for the star collision
   const collides = checkStarCollision(nextX, nextY);
-  if (!collides) {
-    // Only move if not colliding
+  if (!collides) { // move if not colliding
     playerX = nextX;
     playerY = nextY;
   }
@@ -68,14 +72,37 @@ function loop() {
   player.style.left = playerX + "px";
   player.style.top = playerY + "px";
 
-  // Check collision with black hole
+  // Calling for the blackhole-collision 
   checkEscape(player, blackhole, message);
 
   // Loop again
   window.requestAnimationFrame(loop);
 }
 
-// CHECK STAR COLLISIONS
+//* FUNCTION FOR CHECKING AND UPDATING SHRINK STATUS *//
+function checkShrink() {
+  let pressedCount = 0;
+
+  // Count how many keys are currently pressed
+  for (const key in keysPressed) {
+    if (keysPressed[key]) {
+      pressedCount++;
+    }
+  }
+
+  // Shrink if at least 2 keys are pressed simultaneously
+  if (pressedCount >= 2) {
+    playerSize = 20; // Small size
+  } else {
+    playerSize = 40; // Normal size
+  }
+
+  // Apply the size
+  player.style.width = playerSize + "px";
+  player.style.height = playerSize + "px";
+}
+
+//* FUNCTION FOR CHECKING STAR COLLISION *//
 function checkStarCollision(nextX, nextY) {
   const playerRect = player.getBoundingClientRect();
   const newRect = {
@@ -95,14 +122,14 @@ function checkStarCollision(nextX, nextY) {
       newRect.top < starRect.bottom;
 
     if (overlaps) {
-      return true; // stop movement on collision
+      return true; // stop players movement on collision
     }
   }
 
-  return false; // no collision
+  return false; // no collision and keep moving
 }
 
-// COLLISION CHECK
+//* FUNCTION FOR BLACKHOLE COLLISION CHECK *//
 function checkEscape(player, blackhole, message) {
   if (hasEscaped) return;
 
@@ -117,14 +144,14 @@ function checkEscape(player, blackhole, message) {
 
   if (isInside) {
     hasEscaped = true;
-    message.style.display = "block";
+    message.style.display = "block";  
     message.textContent = "YOU MADE IT!";
-    player.style.backgroundColor = "limegreen";
+    player.style.backgroundColor = "black";
   }
 }
 
-// SETUP
-// Setup is run once, at the start of the program. It sets everything up for us!
+//* SETUP FUNCTION *//
+// Setup is run once, at the start of the program
 function setup() {
   player = document.querySelector("#player0");
   blackhole = document.querySelector("#blackhole0");
