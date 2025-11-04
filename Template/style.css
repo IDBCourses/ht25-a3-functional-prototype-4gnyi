@@ -251,6 +251,174 @@
     );
 }
 
+.star11 { 
+    width: 200px;
+    height: 200px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 300px; 
+    left: 900px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star12 { 
+    width: 140px;
+    height: 140px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 300px; 
+    left: 700px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star13 { 
+    width: 130px;
+    height: 130px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 100px; 
+    left: 900px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star14 { 
+    width: 90px;
+    height: 90px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 800px; 
+    left: 600px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star15 { 
+    width: 150px;
+    height: 150px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 500px; 
+    left: 800px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star16 { 
+    width: 70px;
+    height: 70px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 700px; 
+    left: 900px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star17 { 
+    width: 200px;
+    height: 200px;
+    background-color: rgb(250, 204, 96);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 550px; 
+    left: 580px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
+.star18 { 
+    width: 200px;
+    height: 200px;
+    background-color: rgb(236, 165, 0);
+    position: absolute; /*position absolute in div with position relative = free movements*/
+    top: 550px; 
+    left: 1100px;
+    clip-path: polygon(
+        50% 0%,   /* top */
+        61% 35%,  /* upper right */
+        98% 35%,  /* right tip */
+        68% 57%,  /* lower right inner */
+        79% 91%,  /* bottom right */
+        50% 70%,  /* bottom center */
+        21% 91%,  /* bottom left */
+        32% 57%,  /* lower left inner */
+        2% 35%,   /* left tip */
+        39% 35%   /* upper left */
+    );
+}
+
 .blackhole { 
     width: 130px;
     height: 130px;
