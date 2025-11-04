@@ -15,16 +15,16 @@ let playerSize = 40; // player's current size
 // Settings variables should contain all of the "fixed" parts of your programs
 // NOT CHANGING VARIABLES
 const speed = 4; // how many pixels per frame the player is moved 
-const topRow = ["q","w","e","r","t","y","u","i","o","p"]; // Keyboard layout rows
-const middleLeft = ["a","s","d","f","g"]; // Keyboard layout rows
-const middleRight = ["h","j","k","l"]; // Keyboard layout rows
-const bottomRow = ["z","x","c","v","b","n","m"]; // Keyboard layout rows
+const topRow = ["q","w","e","r","t","y","u","i","o","p"]; // Keys moving up
+const middleLeft = ["a","s","d","f","g"]; // Keys moving left
+const middleRight = ["h","j","k","l"]; // Keys moving right
+const bottomRow = ["z","x","c","v","b","n","m"]; // Keys moving down
 
 // Code that runs over and over again
 // MAIN LOOP
 function loop() {
   if (!player || !blackhole || !message) { // checks if elements exists
-    window.requestAnimationFrame(loop); // keep loop running even if elements are not ready yet. still a bit unclear?
+    window.requestAnimationFrame(loop); // keep loop running even if elements are not ready yet
     return;
   } 
 
